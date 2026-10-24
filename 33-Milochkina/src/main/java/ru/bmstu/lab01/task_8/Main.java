@@ -1,6 +1,7 @@
 package ru.bmstu.lab01.task_8;
 import java.util.Arrays;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 8. Получить массивы положительных и отрицательных элементов
@@ -40,9 +41,6 @@ public class Main {
             }
         }
 
-        return new int[][] {
-                Arrays.copyOf(positives, positiveCount),
-                Arrays.copyOf(negatives, negativeCount)
-        };
+        return new int[][]{Arrays.copyOf(positives, positiveCount), Arrays.copyOf(negatives, negativeCount)};
     }
 }

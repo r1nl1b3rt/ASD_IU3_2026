@@ -2,6 +2,7 @@ package ru.bmstu.lab01.task_12;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 12. Найти индексы i < j элементов с заданной суммой.

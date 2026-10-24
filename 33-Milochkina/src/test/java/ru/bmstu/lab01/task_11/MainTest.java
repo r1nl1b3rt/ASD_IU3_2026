@@ -1,7 +1,8 @@
 package ru.bmstu.lab01.task_11;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.bmstu.lab01.common.ConsoleTestSupport.runProgram;
+
+import org.junit.jupiter.api.Test;
 /**
  * Проверяет поиск элемента, ближайшего к среднему арифметическому
  */
@@ -51,9 +52,7 @@ class MainTest {
 
     @Test
     void shouldReadInputAndPrintClosestElement() {
-        String actual = runProgram(
-                "4\n1 2 3 8\n",
-                () -> Main.main(new String[0]));
+        String actual = runProgram("4\n1 2 3 8\n", () -> Main.main(new String[0]));
 
         assertEquals("3" + System.lineSeparator(), actual);
     }

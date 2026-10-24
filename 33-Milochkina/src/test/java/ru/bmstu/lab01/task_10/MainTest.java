@@ -1,7 +1,8 @@
 package ru.bmstu.lab01.task_10;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.bmstu.lab01.common.ConsoleTestSupport.runProgram;
+
+import org.junit.jupiter.api.Test;
 /**
  * Проверяет поиск индекса последнего элемента, кратного делителю
  */
@@ -51,9 +52,7 @@ class MainTest {
 
     @Test
     void shouldReadInputAndPrintIndex() {
-        String actual = runProgram(
-                "5\n6 5 9 4 7\n3\n",
-                () -> Main.main(new String[0]));
+        String actual = runProgram("5\n6 5 9 4 7\n3\n", () -> Main.main(new String[0]));
 
         assertEquals("2" + System.lineSeparator(), actual);
     }

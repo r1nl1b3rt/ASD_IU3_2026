@@ -1,5 +1,6 @@
 package ru.bmstu.lab01.task_10;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 10. Найти индекс последнего элемента, кратного k.

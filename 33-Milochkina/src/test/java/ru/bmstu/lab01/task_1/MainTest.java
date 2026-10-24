@@ -1,12 +1,14 @@
 package ru.bmstu.lab01.task_1;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Проверка нахождения минимального и максимального элементов в задаче 1
  */
@@ -68,20 +70,18 @@ class MainTest {
         String input = "5\n4 -2 9 0 7\n";
         ByteArrayOutputStream output = new ByteArrayOutputStream();
 
-        try (PrintStream testOutput =
-            new PrintStream(output, true, StandardCharsets.UTF_8)) {
-        System.setIn(new ByteArrayInputStream(
-                input.getBytes(StandardCharsets.UTF_8)));
-        System.setOut(testOutput);
+        try (PrintStream testOutput = new PrintStream(output, true, StandardCharsets.UTF_8)) {
+            System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
+            System.setOut(testOutput);
 
-        Main.main(new String[0]);
+            Main.main(new String[0]);
 
-        String expected = "-2 9" + System.lineSeparator();
-        String actual = output.toString(StandardCharsets.UTF_8);
-        assertEquals(expected, actual);
-    } finally {
-        System.setIn(originalInput);
-        System.setOut(originalOutput);
+            String expected = "-2 9" + System.lineSeparator();
+            String actual = output.toString(StandardCharsets.UTF_8);
+            assertEquals(expected, actual);
+        } finally {
+            System.setIn(originalInput);
+            System.setOut(originalOutput);
+        }
     }
-}
 }

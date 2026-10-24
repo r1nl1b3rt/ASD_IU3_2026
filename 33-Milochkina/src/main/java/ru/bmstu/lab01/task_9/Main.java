@@ -1,5 +1,6 @@
 package ru.bmstu.lab01.task_9;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 9. Вывести YES, если массив неубывающий, иначе NO.

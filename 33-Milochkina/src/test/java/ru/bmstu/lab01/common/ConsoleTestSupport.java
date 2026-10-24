@@ -19,10 +19,8 @@ public class ConsoleTestSupport {
         PrintStream originalOutput = System.out;
         ByteArrayOutputStream output = new ByteArrayOutputStream();
 
-        try (PrintStream testOutput =
-                     new PrintStream(output, true, StandardCharsets.UTF_8)) {
-            System.setIn(new ByteArrayInputStream(
-                    input.getBytes(StandardCharsets.UTF_8)));
+        try (PrintStream testOutput = new PrintStream(output, true, StandardCharsets.UTF_8)) {
+            System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
             System.setOut(testOutput);
 
             program.run();

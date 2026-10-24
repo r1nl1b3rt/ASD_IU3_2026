@@ -1,5 +1,6 @@
 package ru.bmstu.lab01.task_6;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 6. Подсчитать элементы, строго большие среднего арифметического.

@@ -39,6 +39,6 @@ public class Main {
             }
         }
 
-        return new int[] {minimum, maximum};
+        return new int[]{minimum, maximum};
     }
 }

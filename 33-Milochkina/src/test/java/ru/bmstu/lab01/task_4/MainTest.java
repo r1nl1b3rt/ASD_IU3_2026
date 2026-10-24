@@ -1,12 +1,14 @@
 package ru.bmstu.lab01.task_4;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
+
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Проверяет поиск всех индексов заданного числа в задаче 4.
  */
@@ -83,10 +85,8 @@ class MainTest {
         PrintStream originalOutput = System.out;
         ByteArrayOutputStream output = new ByteArrayOutputStream();
 
-        try (PrintStream testOutput =
-                     new PrintStream(output, true, StandardCharsets.UTF_8)) {
-            System.setIn(new ByteArrayInputStream(
-                    input.getBytes(StandardCharsets.UTF_8)));
+        try (PrintStream testOutput = new PrintStream(output, true, StandardCharsets.UTF_8)) {
+            System.setIn(new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8)));
             System.setOut(testOutput);
 
             Main.main(new String[0]);

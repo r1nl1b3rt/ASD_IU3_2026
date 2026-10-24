@@ -1,5 +1,6 @@
 package ru.bmstu.lab01.task_11;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 11. Найти элемент, ближайший к среднему арифметическому.
@@ -32,8 +33,7 @@ public class Main {
         long bestDistance = Math.abs((long) closest * numbers.length - sum);
 
         for (int index = 1; index < numbers.length; index++) {
-            long distance = Math.abs(
-                    (long) numbers[index] * numbers.length - sum);
+            long distance = Math.abs((long) numbers[index] * numbers.length - sum);
 
             if (distance < bestDistance) {
                 bestDistance = distance;

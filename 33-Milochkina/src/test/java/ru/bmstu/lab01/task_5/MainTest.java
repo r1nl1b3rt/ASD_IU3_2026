@@ -1,7 +1,8 @@
 package ru.bmstu.lab01.task_5;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ru.bmstu.lab01.common.ConsoleTestSupport.runProgram;
+
+import org.junit.jupiter.api.Test;
 /**
  * Проверяет сумму элементов с чётными индексами
  */
@@ -37,9 +38,7 @@ class MainTest {
 
     @Test
     void shouldReadInputAndPrintSum() {
-        String actual = runProgram(
-                "5\n4 7 2 7 9\n",
-                () -> Main.main(new String[0]));
+        String actual = runProgram("5\n4 7 2 7 9\n", () -> Main.main(new String[0]));
 
         assertEquals("15" + System.lineSeparator(), actual);
     }

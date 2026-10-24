@@ -1,5 +1,6 @@
 package ru.bmstu.lab01.task_5;
 import java.util.Scanner;
+
 import ru.bmstu.lab01.common.ArrayIo;
 /**
  * Задача 5. Найти сумму элементов массива с чётными индексами.
