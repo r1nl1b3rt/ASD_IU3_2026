@@ -39,6 +39,65 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.2</version>
             </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>3.10.4</version>
+
+                <configuration>
+                    <java>
+                        <includes>
+                            <include>src/main/java/**/*.java</include>
+                            <include>src/test/java/**/*.java</include>
+                        </includes>
+
+                        <importOrder>
+                            <order>#,java,javax,org,ru</order>
+                        </importOrder>
+
+                        <eclipse>
+                            <file>${project.basedir}/eclipse-formatter.xml</file>
+                        </eclipse>
+
+                        <trimTrailingWhitespace/>
+                        <endWithNewline/>
+                    </java>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>check-formatting</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>3.6.0</version>
+
+            <configuration>
+                <configLocation>${project.basedir}/checkstyle.xml</configLocation>
+                <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                <consoleOutput>true</consoleOutput>
+                <failOnViolation>true</failOnViolation>
+                <linkXRef>false</linkXRef>
+            </configuration>
+
+            <executions>
+                <execution>
+                    <id>check-code-style</id>
+                    <phase>validate</phase>
+                    <goals>
+                        <goal>check</goal>
+                    </goals>
+                </execution>
+            </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
